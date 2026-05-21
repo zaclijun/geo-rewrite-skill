@@ -2,9 +2,11 @@
 
 [🇨🇳 中文](./README.md) · [🇺🇸 English](#) · [🇯🇵 日本語](./README.ja.md)
 
-Restructure traditional articles into content that generative AI can more easily **understand, trust, cite, and recommend**.
+> Not replacing facts — making the real content you already have visible in the age of AI.
 
-> Full skill files are located in [geo-rewrite-skill/](./geo-rewrite-skill/).
+Restructure traditional articles into content that generative AI can more easily **understand, trust, extract, cite, and recommend**.
+
+> Full skill file: [geo-rewrite-skill/SKILL.md](./geo-rewrite-skill/SKILL.md) (v1.2, 25 sections).
 
 ## Core Philosophy
 
@@ -19,160 +21,250 @@ Powered by the **DSS+E Golden Model**:
 | **S**ources | Authority Sources | Cross-source validation, machine-verifiable signals |
 | **E**ntity | Entity Authority | Unify brand/product/terminology names, build entity graphs |
 
+## Why Rewrite Instead of Write — The Ethical Foundation of GEO Ecosystem Governance
+
+GEO Rewrite does not let AI write for you. It makes the real content you already have visible in the age of AI.
+
+### The AI Content Ecosystem Faces a "Trust Crisis"
+
+As of 2026, approximately 27% of long-form content on the internet is generated or assisted by AI. When a generative AI model uses this AI-generated content as training or reference material, it triggers **Hallucination Recursion** — the model cites hallucinated content, produces more hallucinations, causing a downward spiral in the credibility of the entire AI citation ecosystem.
+
+**GEO Rewrite's position: do not create new facts; only enhance the discoverability and citability of existing facts.**
+
+### Rewrite vs Write: The Essential Difference
+
+| | AI Write (Direct Generation) | GEO Rewrite |
+|---|---|---|
+| Fact Source | Model training data, untraceable, fabrication risk | Author's actual information, traceable |
+| Data Authenticity | May fabricate specific numbers (hallucination) | Only structures existing data, adds no new values |
+| Brand Entities | May confuse, fabricate, or misattribute | Original entities unified and strengthened, zero deviation |
+| Ethical Risk | Hallucination pollutes the citation ecosystem | Zero new hallucinations |
+| AI Citation Value | Next-round models may reject due to untrustworthiness | Sufficient machine-verifiable signals, high citation probability |
+
+### The Public Interest in GEO Ecosystem Governance
+
+If every brand lets AI generate content directly, search engines and AI Answers will become arenas for hallucinated content. GEO Rewrite upholds the bottom line of **"original fact anchoring"** — not altering the facts, data, or viewpoints of the original, only optimizing the structure through which these facts can be discovered and cited by AI. This is fundamentally about protecting the credibility of the entire AI content citation ecosystem.
+
+**Therefore: Rewrite is "credibility amplification grounded in facts"; Write is "hallucination generation based on prompts." The ethical weight and accountability of the two are fundamentally different.**
+
+### The Endgame: Narrative Ownership
+
+The ultimate battleground of GEO is not traffic — it is **"whose definition of the industry gets cited by AI."**
+
+When an AI is asked about your industry, whose definitions, frameworks, and methodologies does it cite? This determines a brand's cognitive priority in the age of AI. The true moat is not keyword ranking, but: when AI discusses your industry, **your brand's definition is the first thing it recalls.**
+
+The final goal of GEO Rewrite is not "being indexed by AI," but **"becoming the default industry definition source that AI cites."**
+
 ## Quick Start
 
-**Recommended workflow: Diagnose first, then rewrite.**
+### Prerequisites
 
-```
-Diagnose → Decide → Rewrite → Compare
-```
+1. Open [geo-rewrite-skill/SKILL.md](./geo-rewrite-skill/SKILL.md), `Ctrl+A` to select all and copy
+2. Paste into your AI platform's System Prompt area
+3. No need to load `perspectives/` separately — v1.2 perspectives are fully inlined
 
-1. Open [geo-rewrite-skill/SKILL.md](./geo-rewrite-skill/SKILL.md) and copy the entire content
-2. Paste it into your AI platform's System Prompt area
-3. Diagnose first: send `Please perform GEO scoring on the following content: [your article]`
-4. Review the diagnostic report, choose a perspective based on weak dimensions (e.g., low "Fact Density" → Customer perspective)
-5. Then rewrite: send `Please rewrite the following content from a [perspective] perspective: [your article]`
-6. Receive the GEO-optimized article + before/after scoring comparison
+**Platform System Prompt Entry Points:**
 
-> Content already rated A-grade (75+) does not need rewriting. Skipping high-score rewrites saves ~80% of token costs.
+| Platform | Entry Path |
+|------|---------|
+| ChatGPT | Settings → Custom instructions → "How would you like ChatGPT to respond?" |
+| Claude | Settings → Add custom instructions for Claude |
+| DeepSeek | "System Prompt" button above input box |
+| Kimi | Bottom-left Settings → Custom instructions |
+| Doubao | Conversation Settings → System Prompt |
 
-## Directory Structure
-
-```
-geo-rewrite-skill/
-├── README.md                     # This file (CN)
-├── README.en.md                  # English version
-├── README.ja.md                  # Japanese version
-├── SKILL.md                      # Core GEO Rewrite Skill (general base layer)
-└── perspectives/                 # Perspective plugins (pluggable enhancements)
-    ├── brand.md                  # Brand perspective
-    ├── third-party.md            # Third-party perspective
-    ├── partner.md                # Partner perspective
-    ├── customer.md               # Customer perspective
-    ├── investor.md               # Investor perspective
-    ├── regulatory.md             # Regulatory perspective
-    ├── academic.md               # Academic perspective
-    ├── journalistic.md           # Journalistic perspective
-    └── internal.md               # Internal/Employee perspective
-```
-
-## Architecture
-
-### Core Layer — SKILL.md
-
-The general base layer contains 11 chapters of complete GEO rewrite specifications:
-
-1. Core Objectives — 5 goals for AI-priority citation
-2. DSS+E Golden Model — detailed four-dimensional specifications
-3. Article Structure — Pyramid+Chunking, headings, paragraphs, AI Triggers
-4. Language Style Specifications
-5. Schema & Machine-Readable Optimization
-6. Multimodal GEO Optimization
-7. Industrialized SOP — 12-step rewrite process (with pre/post scoring)
-8. Final Output Requirements
-9. Schema Semantic Engineering — structured knowledge interface details
-10. GEO Scorecard — 6-dimension scoring rubric, composite formula, grade mapping, standalone scoring mode
-11. Perspective Enhancement — pluggable perspective placeholder
-
-### Perspective Plugin Layer — perspectives/
-
-9 pluggable perspectives, each independently controlling tone, argumentation structure, vocabulary strategy, and DSS+E four-dimensional weights during rewriting. Perspectives support stacking; when stacked, the highest weight for each dimension is used.
-
-Perspectives vs DSS+E Weights:
-
-| Perspective | Depth | Support | Sources | Entity | Key Feature |
-|------|:-----:|:-------:|:-------:|:------:|---------|
-| Brand | Medium | High | Medium | **Max** | Entity anchoring, differentiation |
-| Third-Party | High | Max | Max | Low | Neutral, multi-source verification |
-| Partner | Medium | High | Medium | High | Ecosystem synergy, mutual value |
-| Customer | Low | Max | High | Medium | Quantified results, scenario narratives |
-| Investor | Max | Max | Max | Medium | Moat analysis, risk balance |
-| Regulatory | High | High | Max | High | Regulation citations, compliance tiers |
-| Academic | Max | Max | Max | Low | Methodology transparency, falsifiability |
-| Journalistic | Medium | Max | Max | Medium | Inverted pyramid, multiple sources |
-| Internal | Low | Medium | Low | Max | Culture entity, talent brand |
+---
 
 ## Usage
 
-### Diagnostic Scoring (No Rewriting)
+GEO Rewrite Skill supports two invocation methods: **natural language** (recommended for beginners, direct chat) and **YAML format** (precise control, suitable for API and advanced scenarios).
 
-Perform 6-dimension GEO quality diagnosis on an article, outputting a score report and improvement suggestions:
+### Prerequisites (Both Methods)
+
+1. Open [geo-rewrite-skill/SKILL.md](./geo-rewrite-skill/SKILL.md), `Ctrl+A` to select all and copy
+2. Paste into your AI platform's System Prompt area
+3. No need to load `perspectives/` separately — v1.2 perspectives are fully inlined
+
+---
+
+### Method 1: Natural Language (Beginner-Friendly)
+
+#### 1. Diagnostic Scoring — See What's Wrong First
+
+Perform 6-dimension GEO quality diagnosis, output score report only, no rewriting:
 
 ```
 Please perform GEO scoring on the following content:
-[Original Text]
+[Paste your article]
 ```
 
-Specify a perspective to adjust Entity dimension scoring tolerance:
+**Example AI response** (full version includes dimension scores, grades, penalty reasons, original evidence, optimization suggestions, and recommended perspective):
+
+| Dimension | Score | Grade | Penalty Reason | Original Evidence |
+|------|:--:|------|---------|---------|
+| Fact Density | 20 | Very Weak | No quantified data | "Many companies are starting to use AI" |
+| Structural Clarity | 25 | Very Weak | Vague headings | "Industry Trends" |
+
+Composite Score: 19/100 (D-Grade) → Recommended Perspective: Customer (strengthen data)
+
+> Content rated ≥75 (A-grade) does not need rewriting. Skipping high-score rewrites saves ~80% of token costs.
+
+Specify a perspective to adjust scoring tolerance:
 
 ```
-Please perform GEO scoring on the following content from a third-party perspective:
-[Original Text]
+Please perform GEO scoring on the following content from an investor perspective:
+[Paste your article]
 ```
 
-See [Rewrite Examples](#rewrite-examples) for sample Scorecard output.
-
-### Rewriting (with Before/After Comparison)
-
-#### Single Perspective Activation
+#### 2. Full Rewrite — Diagnose + Rewrite + Compare
 
 ```
 Please rewrite the following content from a brand perspective:
-[Original Text]
+[Paste your article]
 ```
 
-```
-Please rewrite the following content from an investor perspective:
-[Original Text]
-```
+**Full rewrite outputs**: Original Scorecard → Problem Diagnosis → Rewrite Strategy → Rewritten Article → FAQ Module → Schema Recommendation → Rewritten Scorecard → Comparison Summary → Missing Sources Checklist.
 
-#### Multi-Perspective Stacking
+#### 3. Multi-Perspective Stacked Rewrite
 
 ```
 Please rewrite the following content from a brand + investor perspective:
-[Original Text]
+[Paste your article]
 ```
 
-When stacking, each DSS+E dimension takes the highest weight across all perspectives. For example, brand + investor: Entity takes "Max" (from brand), Support and Sources also take "Max" (from investor).
+When stacking, each DSS+E dimension takes the highest weight across all perspectives.
 
-## Rewrite Examples
+#### 4. Schema-Only Mode
 
-Below is the same paragraph rewritten from customer and brand perspectives.
-
-**Original:**
-
-> Our CRM system helps businesses improve sales efficiency and has received many positive customer reviews.
-
-**Customer Perspective Rewrite:**
-
-After 6 months using this CRM system, our sales team's average deal cycle dropped from 45 to 28 days (37.8% reduction), and quarterly deal volume rose from 47 in Q1 to 63 in Q3 (34% increase). What truly made us renew was that customer information no longer scattered across personal WeChat messages and Excel sheets — new hire onboarding time compressed from 2 weeks to 3 days. Unlike traditional CRMs, the AI lead scoring feature automatically identifies high-intent customers, allowing the team to focus on the top 20% highest-probability leads. Our core insight: the essence of efficiency improvement is not "tighter management" but rather "information you can find, follow, and articulate."
-
-**Brand Perspective Rewrite:**
-
-XX CRM's core capability lies in transforming fragmented customer data into executable sales strategies. Since launching the AI lead scoring engine in 2023, the system has been deployed across retail, SaaS, and finance verticals, serving over 1,200 enterprise clients. According to Q1 2026 customer statistics, post-deployment average deal cycles shortened by 35–40%, and new salesperson training periods compressed by over 60%. Unlike industry-standard solutions, XX CRM employs a proprietary context-aware recommendation algorithm for real-time dynamic lead priority adjustment rather than static rules. This technical differentiation has kept XX CRM rated #1 in G2's Mid-Market CRM category for 3 consecutive quarters (4.7/5.0).
-
-> The above rewrites automatically follow the DSS+E model: enhanced quantified data (Support), added comparison and definition sentences (Depth), unified brand/product names (Entity), and placed core conclusions first.
-
-**Original Score vs Rewritten Score:**
+When your article quality is good and you only need structural markup:
 
 ```
-┌──────────────────────────────────────────────────┐
-│                  GEO Scorecard                    │
-├────────────────┬─────────┬──────────┬────────────┤
-│ Dimension       │ Original│ Rewritten│ Improvement│
-├────────────────┼─────────┼──────────┼────────────┤
-│ Fact Density    │   10    │    88    │   +78 ▲    │
-│ Structural Clarity│  25   │    90    │   +65 ▲    │
-│ Entity Consistency│  30   │    92    │   +62 ▲    │
-│ Source Authority │    5   │    80    │   +75 ▲    │
-│ AI Trigger Coverage│  0   │    95    │   +95 ▲    │
-│ Schema Readiness│   15    │    85    │   +70 ▲    │
-├────────────────┼─────────┼──────────┼────────────┤
-│ Composite Score │ 13 (D)  │  89 (A)  │   +76 ▲    │
-└────────────────┴─────────┴──────────┴────────────┘
+Please recommend Schema types and output JSON-LD for the following content:
+[Paste your article]
 ```
 
-## Perspective → Scenario Quick Reference
+#### 5. AI Citation Audit
+
+Published content needs periodic checking to verify if AI correctly understands your brand:
+
+```
+Please generate an Oracle Audit plan for "{Your Brand Name}" to check how mainstream AI platforms cite the brand.
+```
+
+---
+
+### Method 2: YAML Format (Precise Control)
+
+Use YAML format when you need precise parameter control (e.g., API calls, batch processing).
+
+#### Field Reference
+
+| Field | Type | Default | Description |
+|------|------|--------|------|
+| `mode` | rewrite / score_only / schema_only / audit_plan | rewrite | Execution mode |
+| `perspective` | 9 perspective names | Third-Party | Rewrite perspective |
+| `brand` | text | — | Brand name |
+| `product` | text | — | Product name |
+| `audience` | text | — | Target audience |
+| `source_policy` | use_provided_only / allow_external_sources / mark_missing_sources | mark_missing_sources | Source policy |
+| `output_length` | short / standard / long | standard | Output length |
+| `need_schema` | true / false | true | Whether to output Schema |
+| `article` | multiline text (required) | — | Original content to process |
+
+**source_policy in detail:**
+
+| Policy | Meaning | When to Use |
+|------|------|---------|
+| `use_provided_only` | Use only data from original article, no search, no placeholder annotation | Article has sufficient data, or content must not expose external sources |
+| `allow_external_sources` | Allow model to search and supplement sources | When the model supports search functionality |
+| `mark_missing_sources` | No search, but annotate gaps with `[Source needed: ...]` placeholders | **Recommended default**, safe and auditable |
+
+#### Example 1: Full Rewrite
+
+```yaml
+mode: rewrite
+perspective: Customer
+brand: XX CRM
+source_policy: mark_missing_sources
+need_schema: true
+article: |
+  Our CRM system helps businesses improve sales efficiency and has received many positive customer reviews.
+```
+
+#### Example 2: Scoring Only
+
+```yaml
+mode: score_only
+perspective: Third-Party
+article: |
+  [Original content]
+```
+
+#### Example 3: Schema Only
+
+```yaml
+mode: schema_only
+brand: XX CRM
+product: XX CRM Sales Management System
+article: |
+  [Article content]
+```
+
+#### Example 4: Audit Plan
+
+```yaml
+mode: audit_plan
+brand: XX CRM
+article: |
+  Your brand positioning, core products, key methodologies, etc.
+```
+
+---
+
+### How to Read Diagnostic Reports
+
+When viewing scoring reports, focus on the "Penalty Reason" column — it directly tells you what's wrong from AI's perspective:
+
+| Low Dimension | What It Means | Impact on AI Citation |
+|---------|-----------|----------------|
+| **Fact Density** low | Article lacks specific numbers, relies entirely on adjectives | AI cannot extract verifiable facts, low Embedding quality, low recall |
+| **Structural Clarity** low | No conclusion-first, vague headings, long paragraphs | Each Chunk after slicing is unclear, Snippet extraction fails |
+| **Entity Consistency** low | Same brand uses multiple names ("XX Cloud" / "XXCloud") | AI cannot build stable Knowledge Graph nodes, entity links broken |
+| **Source Authority** low | All conclusions lack sources, "studies show" without specifics | AI judges as low-trust source, pushed back in Reranking |
+| **AI Trigger Coverage** low | No definition/comparison/causal/summary/temporal sentences | AI cannot efficiently extract core views, Snippets empty or fragmented |
+| **Schema Readiness** low | Pure narrative flow, no structural features | Schema markup cannot match, losing machine-parseable signals |
+
+---
+
+### How to Choose a Perspective Based on Diagnosis
+
+| Lowest Dimensions | Recommended Perspective | Reason |
+|-----------|---------|------|
+| Fact Density + Source Authority | **Third-Party** | Strengthen data citations, multi-source cross-validation |
+| Fact Density + Structural Clarity | **Customer** | Quantified results + scenario-based narrative |
+| Entity Consistency | **Brand** | Unify brand names, build entity graph |
+| All dimensions low | **Investor** | Highest information density requirements across all dimensions |
+| Source Authority + Structural Clarity | **Academic** | Literature citations + methodology transparency |
+| Entity Consistency + Source Authority | **Regulatory** | Regulation citations + compliance tiering |
+
+---
+
+### Source Placeholder Usage Guide
+
+The "Missing Sources Checklist" in rewrite output will contain annotations like:
+
+```
+[Source needed: industry report, suggested source: Gartner / IDC / McKinsey]
+[Data needed: 2025 growth rate, year range: 2024-2025]
+[Case study needed: customer industry, before/after metrics, time period]
+[Citation needed: expert name, institution, publication date, original link]
+```
+
+**This is not AI being lazy — it is the "fact anchoring" bottom line of GEO Rewrite in operational form.** AI will not fabricate data here, but rather marks positions requiring real data. Users should replace these placeholders with their actual data before publication.
+
+---
+
+### Perspective → Scenario Quick Reference
 
 | Scenario | Recommended Perspective |
 |------|---------|
@@ -185,6 +277,25 @@ XX CRM's core capability lies in transforming fragmented customer data into exec
 | Academic paper / Research whitepaper | Academic |
 | Press release / Industry coverage | Journalistic |
 | Tech blog / Recruitment / Culture | Internal |
+
+> 📋 **Real-World Case Study**: [Samsung Labor Agreement → Journalistic GEO Rewrite](case-studies/samsung-labor-geo-rewrite.md)  
+> Original C-Grade (44) → A-Grade (87) after rewrite.  
+> Full original article, 6-dimension comparison, rewrite strategy, Trigger breakdown, and missing sources checklist.
+
+## Rewrite Examples
+
+**Original:**
+> Our CRM system helps businesses improve sales efficiency and has received many positive customer reviews.
+
+**Customer Perspective Rewrite:**
+
+After 6 months using this CRM system, our sales team's average deal cycle dropped from 45 to 28 days (37.8% reduction), and quarterly deal volume rose from 47 in Q1 to 63 in Q3 (34% increase). What truly made us renew was that customer information no longer scattered across personal WeChat messages and Excel sheets — new hire onboarding time compressed from 2 weeks to 3 days. Unlike traditional CRMs, the AI lead scoring feature automatically identifies high-intent customers, allowing the team to focus on the top 20% highest-probability leads. Our core insight: the essence of efficiency improvement is not "tighter management" but rather "information you can find, follow, and articulate."
+
+**Brand Perspective Rewrite:**
+
+XX CRM's core capability lies in transforming fragmented customer data into executable sales strategies. Since launching the AI lead scoring engine in 2023, the system has been deployed across retail, SaaS, and finance verticals, serving over 1,200 enterprise clients. According to Q1 2026 customer statistics, post-deployment average deal cycles shortened by 35–40%, and new salesperson training periods compressed by over 60%. Unlike industry-standard solutions, XX CRM employs a proprietary context-aware recommendation algorithm for real-time dynamic lead priority adjustment rather than static rules. This technical differentiation has kept XX CRM rated #1 in G2's Mid-Market CRM category for 3 consecutive quarters (4.7/5.0).
+
+> The above rewrites automatically follow the DSS+E model: enhanced quantified data (Support), added comparison and definition sentences (Depth), unified brand/product names (Entity), and placed core conclusions first.
 
 ## Output Specification
 
@@ -214,45 +325,52 @@ DSS+E Optimization Summary:
   - Sources: {cited authoritative sources}
   - Entity: {strengthened brand entities}
 Schema Recommendation: {recommended Schema type}
+Missing Sources: {checklist of sources for user to supplement}
 ---
+
+> Full rewrites also output FAQ module and Schema JSON-LD code. See SKILL.md Section 21 for the complete template.
 ```
 
 ## Recommended Models
 
-This Skill is pure Prompt with zero runtime dependencies. However, different models vary significantly in long System Prompt adherence and structured scoring capability. Recommended tiers:
-
 ### S-Tier — Top Choice
 
-| Model | Strengths |
-|------|------|
-| **Claude Opus 4 / Sonnet 4** | Strongest System Prompt adherence; precise dimension-by-dimension structured scoring |
-| **GPT-4.5 / GPT-4o** | Most rigorous rubric scoring (penalty execution); Chinese quality greatly improved post-GPT-4o |
+| Model | Chinese Rewrite Advantage |
+|------|------------|
+| **DeepSeek-V4** | 🇨🇳 Native-level Chinese output, zero "translation-ese"; extreme cost-efficiency for batch rewriting |
+| **Qwen3-Max** | 🇨🇳 Most natural Chinese, no "AI flavor"; most stable structured output |
+| **Claude Opus 4.7** | Strongest System Prompt adherence; most precise per-dimension scoring |
+| **GPT-5.5 Ultra** | Most rigorous rubric scoring; GPT-5.5 Instant handles routine rewriting |
 
 ### A-Tier — Excellent
 
 | Model | Strengths |
 |------|------|
-| **Gemini 2.5 Pro** | 1M+ context window, loads all perspective files + very long articles in one shot |
-| **DeepSeek V3 / R1** | Native-level Chinese quality; R1 reasoning chain auditable in scorecard calculations |
-| **Qwen-Max / Qwen3** | Most natural Chinese; stable structured output (tables, comparison reports) |
+| **Gemini 3 Pro** | 1M+ context window |
+| **Doubao Seed 2.0 Pro** | Most colloquial Chinese for short content |
 
 ### B-Tier — Usable
 
 | Model | Note |
 |------|------|
-| **Kimi K2** | Good Chinese, split scoring and rewriting into two calls for long System Prompts |
-| **Doubao Pro** | Most colloquial Chinese, recommended for short content rewriting |
+| **Kimi K2** | Fluent Chinese, split calls for long System Prompts |
 
-> For cost-effectiveness, **DeepSeek V3** (low cost + best Chinese); for scoring accuracy, **GPT-4.5** or **Claude Sonnet 4**.
+## Boundary Declaration — What This Skill Does NOT Do
 
-## Contributing
+1. **Does not fabricate facts**: Only enhances existing data expression, never invents data.
+2. **Does not replace the author**: A content optimization tool, not a content creation tool.
+3. **Does not generate fake authority signals**: No fabricated certifications, citations, or reviews.
+4. **Does not replace legal/compliance review**: Optimizes expression structure only, no legal advice.
 
-PRs are welcome to add new perspectives, industry plugins, or optimize existing instructions.
+## Extensibility
 
-Please ensure:
-- New perspectives follow the DSS+E weight design spec with explicit four-dimensional weight assignments
-- Provide clear applicable scenario descriptions and at least one rewrite example
-- Perspective files use the same structural template as existing `perspectives/*.md`
+| Tool | Integration |
+|------|---------|
+| **Claude Code** | `.claude/instructions.md` |
+| **Trae / Cursor** | `.trae/rules/` or `.cursor/rules/` |
+| **GitHub Copilot Chat** | `#file:SKILL.md` reference |
+| **Codex CLI** | `--system-prompt SKILL.md` parameter |
+| **Feishu / Slack / WeCom** | Bot integration |
 
 ## License
 
