@@ -399,6 +399,16 @@ Git Push → 检测 docs/*.md 变更
 - 提供清晰的适用场景说明和至少一组改写示例
 - 视角文件使用与现有 `perspectives/*.md` 一致的结构模板
 
+## 关于作者
+
+本项目由 [Zachary](https://github.com/zacharylijun-sketch) 维护。欢迎交流与协作：
+
+- **微信**：`Lee_19980520`
+
+无论是 GEO 改写策略讨论、视角定制需求、Skill 优化建议，还是企业级内容管线搭建，都欢迎联系。
+
+> 🔬 **GEO 监测软件**：我们正在内测一款面向生成式 AI 引用监测的 SaaS 工具——持续追踪品牌在 ChatGPT、Gemini、豆包、Kimi 等 AI 平台的引用状态、实体准确率和竞品混淆率。感兴趣可添加微信获取内测资格。
+
 ## 许可
 
 MIT License

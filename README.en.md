@@ -372,6 +372,16 @@ Missing Sources: {checklist of sources for user to supplement}
 | **Codex CLI** | `--system-prompt SKILL.md` parameter |
 | **Feishu / Slack / WeCom** | Bot integration |
 
+## About the Author
+
+This project is maintained by [Zachary](https://github.com/zacharylijun-sketch). Reach out for collaboration:
+
+- **WeChat**: `Lee_19980520`
+
+Whether it's GEO rewrite strategy discussions, custom perspective requests, Skill optimization ideas, or enterprise content pipeline setup — feel free to get in touch.
+
+> 🔬 **GEO Monitoring Tool**: We're beta-testing a SaaS tool for generative AI citation monitoring — tracking your brand's citation status, entity accuracy, and competitor confusion rate across ChatGPT, Gemini, Doubao, Kimi, and other AI platforms. Add WeChat above for beta access.
+
 ## License
 
 MIT License

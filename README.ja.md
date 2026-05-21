@@ -321,6 +321,16 @@ article: |
 | **Codex CLI** | `--system-prompt SKILL.md` |
 | **Feishu / Slack / WeCom** | ボット統合 |
 
+## 作者について
+
+本プロジェクトは [Zachary](https://github.com/zacharylijun-sketch) がメンテナンスしています。
+
+- **WeChat**：`Lee_19980520`
+
+GEO リライト戦略の相談、カスタム視点の依頼、Skill 最適化提案、エンタープライズコンテンツパイプライン構築まで、お気軽にご連絡ください。
+
+> 🔬 **GEO モニタリングツール**：ChatGPT、Gemini、豆包、Kimi などの AI プラットフォームにおけるブランドの引用状態、エンティティ精度、競合混同率を継続追跡する SaaS ツールを内測中。ベータ版のお申し込みは上記 WeChat まで。
+
 ## ライセンス
 
 MIT License

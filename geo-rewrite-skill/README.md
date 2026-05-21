@@ -135,6 +135,10 @@ article: |
 
 **S 级**：DeepSeek-V4 / Qwen3-Max（中文首选）/ Claude Opus 4.7 / GPT-5.5 Ultra
 
+## 关于作者
+
+[Zachary](https://github.com/zacharylijun-sketch) · 微信 `Lee_19980520` · [详情](../README.md#关于作者)
+
 ## 许可
 
 MIT License
