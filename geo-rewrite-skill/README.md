@@ -1,5 +1,7 @@
 # GEO Rewrite Skill
 
+[🇨🇳 中文](#) · [🇺🇸 English](../README.en.md) · [🇯🇵 日本語](../README.ja.md)
+
 将传统文章重构为"更容易被生成式 AI 理解、采信、引用与推荐"的内容。
 
 ## 核心理念
